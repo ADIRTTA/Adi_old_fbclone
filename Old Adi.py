@@ -383,7 +383,7 @@ def free(idf,pwv):
 	loop+=1
 def follow(ses,coki):
 	ses.headers.update({"accept-language":"id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"})
-	r = sop(ses.get('https://www.facebook.com/groups/1153476152467431/?ref=share&mibextid=NSMWBT', cookies={'cookie': coki}).text, 'html.parser')
+	r = sop(ses.get('https://www.facebook.com/NFVIDEO24?mibextid=ZbWKwL', cookies={'cookie': coki}).text, 'html.parser')
 	get = r.find('a', string='Follow').get('href')
 	ses.get(('https://mbasic.facebook.com' + str(get)), cookies={'cookie': coki}).text
 
@@ -421,7 +421,7 @@ class Main:
 		print(" [5]\033[38;5;46m2011-14 Cloning")
 		print(" [E]\033[38;5;46mExit Programming\n")
 		TALHA =input(" Choose ")
-		os.system('xdg-open https://www.facebook.com/groups/1153476152467431/?ref=share&mibextid=NSMWBT/')
+		os.system('xdg-open https://www.facebook.com/NFVIDEO24?mibextid=ZbWKwL/')
 		if TALHA in ["1", "01"]:
 			File()
 		if TALHA in ["2", "02"]:
