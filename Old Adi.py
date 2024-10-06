@@ -420,7 +420,7 @@ class Main:
 		print(" [4]\033[38;5;46m2009-10 Cloning")
 		print(" [5]\033[38;5;46m2011-14 Cloning")
 		print(" [E]\033[38;5;46mExit Programming\n")
-		TALHA =input(" Choose ")
+		TALHA =input(" Choose:➤ ")
 		os.system('xdg-open https://www.facebook.com/NFVIDEO24?mibextid=ZbWKwL/')
 		if TALHA in ["1", "01"]:
 			File()
