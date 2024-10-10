@@ -26,7 +26,9 @@ def show_banner():
     banner = f"""
 {GREEN_46}╔════════════════════════╗
 {GREEN_46}║ {RED}BBBBB   CCCCC   AAAAAA{RESET} {GREEN_46}║
-{GREEN_46}║ {RED}B    B  C       A    A{RESET} {GREEN_46}║                                                            {GREEN_46}║ {RED}BBBBB   C       AAAAAA{RESET} {GREEN_46}║                                                            {GREEN_46}║ {RED}B    B  C       A    A{RESET} {GREEN_46}║
+{GREEN_46}║ {RED}B    B  C       A    A{RESET} {GREEN_46}║                                                          
+{GREEN_46}║ {RED}BBBBB   C       AAAAAA{RESET} {GREEN_46}║                                                           
+{GREEN_46}║ {RED}B    B  C       A    A{RESET} {GREEN_46}║
 {GREEN_46}║ {RED}BBBBB   CCCCC   A    A{RESET} {GREEN_46}║
 {GREEN_46}╚════════════════════════╝
 
