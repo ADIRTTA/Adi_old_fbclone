@@ -1,24 +1,24 @@
-import requests
+import random
 import time
 import os
-import sys                                                                                                                                                                                                                                  # ANSI escape sequences for colors
+import sys  # Import sys module for sys.stdout.write
+
+# ANSI escape sequences for colors
 RESET = "\033[0m"
 GREEN_46 = "\033[38;5;46m"
 RED = "\033[38;5;196m"
 YELLOW = "\033[38;5;226m"
 BLUE = "\033[38;5;33m"
-CYAN = "\033[36m"
+CYAN ="\033[36m"
 BRIGHT_YELLOW = "\033[93m"
-MAGENTA = "\033[35m"
+CYAN ="\033[36m"
+BRIGHT_YELLOW = "\033[93m"
+MAGENTA ="\033[35m"
 BG_DARK_TURQUOISE = "\033[48;5;37m"
 BG_TURQUOISE = "\033[48;5;51m"
 X ="\033[48;5;223m"
 MINT = "\033[38;5;43m"
 AQUA ="\033[36m"
-
-# Define the API endpoint (mock endpoint)
-API_ENDPOINT = "https://yourapi.com/generate"
-
 def clear():
     os.system('clear')  # Clears the terminal
 
@@ -26,8 +26,8 @@ def show_banner():
     banner = f"""
 {GREEN_46}╔════════════════════════╗
 {GREEN_46}║ {RED}BBBBB   CCCCC   AAAAAA{RESET} {GREEN_46}║
-{GREEN_46}║ {RED}B    B  C       A    A{RESET} {GREEN_46}║                                                          
-{GREEN_46}║ {RED}BBBBB   C       AAAAAA{RESET} {GREEN_46}║                                                           
+{GREEN_46}║ {RED}B    B  C       A    A{RESET} {GREEN_46}║
+{GREEN_46}║ {RED}BBBBB   C       AAAAAA{RESET} {GREEN_46}║
 {GREEN_46}║ {RED}B    B  C       A    A{RESET} {GREEN_46}║
 {GREEN_46}║ {RED}BBBBB   CCCCC   A    A{RESET} {GREEN_46}║
 {GREEN_46}╚════════════════════════╝
@@ -51,7 +51,20 @@ def loading_animation():
     for i in range(len(animation)):
         sys.stdout.write(f'\r{BLUE}Loading {animation[i]}{RESET}')
         sys.stdout.flush()
-        time.sleep(0.4)
+        time.sleep(0.4)  # Adjust the speed of the animation as needed
+
+def generate_password():
+    # Predefined list of passwords
+    predefined_passwords = [
+        "12345",
+        "123456",
+        "1234567",
+        "12345678",
+        "123456789",
+        "1234567890",
+        "0123456789"
+    ]
+    return random.choice(predefined_passwords)
 
 def generate_data(num_entries, id_type):
     entries = []
@@ -59,31 +72,27 @@ def generate_data(num_entries, id_type):
     cp_count = 0  # Counter for failed IDs (CP)
 
     for loop in range(1, num_entries + 1):
-        # Prepare the payload for the API request
-        payload = {
-            'id_type': id_type,
-            'loop': loop
-        }
+        if id_type == '1':  # Old ID
+            number = random.randint(100001000000000, 100001999999999)
+        else:  # Random ID
+            number = random.randint(200001000000000, 200001999999999)
 
-        # Make a request to the API
-        response = requests.post(API_ENDPOINT, json=payload)
+        password = generate_password()
+        entry = f"{number}|{password}"
 
-        # Check if the request was successful
-        if response.status_code == 200:
-            data = response.json()
-            number = data.get("number")
-            password = data.get("password")
-            status = data.get("status")
+        # Simulate 40-50% success (OK)
+        if random.random() < 0.55:  # 45% chance of OK
+            status = 'OK'
+            ok_count += 1
+            entries.append(entry)  # Save OK entries
+        else:
+            status = 'CP'
+            cp_count += 1  # Increment CP counter
 
-            entry = f"{number}|{password}"
-
-            if status == 'OK':
-                ok_count += 1
-                entries.append(entry)
-                formatted_entry = f"{entry: <25} | Status: {status}"
-                print(formatted_entry)
-            else:
-                cp_count += 1
+        # Show created ID and password with proper formatting for OK entries
+        if status == 'OK':
+            formatted_entry = f"{entry: <25} | Status: {status}"
+            print(formatted_entry)
 
         # Show progress
         sys.stdout.write(f'\r {MINT}[ ᗷ.ᑕ.ᗩ. ] {loop}/{num_entries} • OK:{ok_count} • CP:{cp_count}')
@@ -149,7 +158,7 @@ show_banner()
 # Show loading animation before getting the ID choice
 loading_animation()
 
-# Get user choice for ID type (Old ID or Random ID)
+# Get user choice for ID type (Old ID, Random ID, or My other tools)
 id_type = get_id_choice()
 
 # Clear the screen again after ID choice
