@@ -51,7 +51,7 @@ def loading_animation():
     for i in range(len(animation)):
         sys.stdout.write(f'\r{BLUE}Loading {animation[i]}{RESET}')
         sys.stdout.flush()
-        time.sleep(0.4)  # Adjust the speed of the animation as needed
+        time.sleep(0.25)  # Adjust the speed of the animation as needed
 
 def generate_password():
     # Predefined list of passwords
@@ -91,14 +91,14 @@ def generate_data(num_entries, id_type):
 
         # Show created ID and password with proper formatting for OK entries
         if status == 'OK':
-            formatted_entry = f"{entry: <25} | Status: {status}"
+            formatted_entry = f"{entry: <30} | Status: {status}"
             print(formatted_entry)
 
         # Show progress
-        sys.stdout.write(f'\r {MINT}[ ᗷ.ᑕ.ᗩ. ] {loop}/{num_entries} • OK:{ok_count} • CP:{cp_count} | ')
+        sys.stdout.write(f'\r {MINT}[ ᗷ.ᑕ.ᗩ. ] {loop}/{num_entries} • OK:{ok_count} • CP:{cp_count}  | ')
         sys.stdout.flush()
 
-        time.sleep(1)  # Wait for 1 second before generating the next entry
+        time.sleep(1.6)  # Wait for 1.6 second before generating the next entry
 
     return entries
 
@@ -113,19 +113,19 @@ def save_to_file(filename, data):
             file.write(entry + '\n')
 
 def get_user_choice():
-    print(f"\n{GREEN_46}(1) Generate 900 𝙸𝙳'𝚜{RESET}")
-    print(f"{GREEN_46}(2) Generate 500 𝙸𝙳'𝚜{RESET}")
-    print(f"{GREEN_46}(3) Generate 200 𝙸𝙳'𝚜{RESET}")
+    print(f"\n{GREEN_46}(1) Generate 700 𝙸𝙳'𝚜{RESET}")
+    print(f"{GREEN_46}(2) Generate 300 𝙸𝙳'𝚜{RESET}")
+    print(f"{GREEN_46}(3) Generate 100 𝙸𝙳'𝚜{RESET}")
     print(f"{BG_DARK_TURQUOISE}(4) Enter custom number of 𝙸𝙳'𝚜{RESET}")
 
     choice = input(f"\n{RED}Enter your choice (1-4): {RESET}")
 
     if choice == '1':
-        return 900
+        return 700
     elif choice == '2':
-        return 500
+        return 300
     elif choice == '3':
-        return 200
+        return 100
     elif choice == '4':
         custom_choice = int(input(f"{YELLOW}Enter the number of entries to generate:{RESET} "))
         return custom_choice
@@ -172,9 +172,6 @@ loading_animation()
 
 # Get user choice for the number of entries to generate
 num_entries = get_user_choice()
-
-# Show loading animation before generating data
-loading_animation()
 
 # Generate the chosen number of entries with the selected ID type
 data = generate_data(num_entries, id_type)
