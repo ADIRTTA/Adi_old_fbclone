@@ -105,7 +105,7 @@ def generate_data(num_entries, id_type):
             print(formatted_entry)
 
         # Show progress
-        sys.stdout.write(f'\r {MINT}[ ᗷ.ᑕ.ᗩ. ] {loop}/{num_entries} • OK:{ok_count} • CP:{cp_count}   | ')
+        sys.stdout.write(f'\r {MINT}[ ᗷ.ᑕ.ᗩ.💞 ] {loop}/{num_entries} • OK:{ok_count} • CP:{cp_count}   | ')
         sys.stdout.flush()
 
         time.sleep(3)  # Wait for 3 second before generating the next entry
