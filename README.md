@@ -19,7 +19,7 @@ cd Adi_old_fbclone
 
 chmod +x *
 
-python 'Old Adi.py'
+python3 'Old Adi.py'
 
 
 
