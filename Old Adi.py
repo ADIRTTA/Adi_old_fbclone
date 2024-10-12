@@ -2,6 +2,7 @@ import random
 import time
 import os
 import sys  # Import sys module for sys.stdout.write
+import subprocess
 
 # ANSI escape sequences for colors
 RESET = "\033[0m"
@@ -21,6 +22,15 @@ MINT = "\033[38;5;43m"
 AQUA ="\033[36m"
 def clear():
     os.system('clear')  # Clears the terminal
+# Function to check if there's internet connectivity
+def check_internet():
+    try:
+        # Ping Google's DNS server to check for internet connection
+        output = subprocess.run(['ping', '-c', '1', '8.8.8.8'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        return output.returncode == 0
+    except Exception:
+        return False
+
 
 def show_banner():
     banner = f"""
@@ -95,10 +105,10 @@ def generate_data(num_entries, id_type):
             print(formatted_entry)
 
         # Show progress
-        sys.stdout.write(f'\r {MINT}[ ᗷ.ᑕ.ᗩ. ] {loop}/{num_entries} • OK:{ok_count} • CP:{cp_count}  | ')
+        sys.stdout.write(f'\r {MINT}[ ᗷ.ᑕ.ᗩ. ] {loop}/{num_entries} • OK:{ok_count} • CP:{cp_count}   | ')
         sys.stdout.flush()
 
-        time.sleep(1.6)  # Wait for 1.6 second before generating the next entry
+        time.sleep(3)  # Wait for 3 second before generating the next entry
 
     return entries
 
@@ -148,6 +158,7 @@ def get_id_choice():
         print(f"{GREEN_46}Invalid choice, defaulting to Random ID.{RESET}")
         return '2'  # Default to Random ID
     return id_choice
+
 
 # Clear the screen
 clear()
